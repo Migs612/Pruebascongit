@@ -1,3 +1,59 @@
+#Para iniciar el repositorio
 git init
 git add comandos.txt
 git commit -m "Primer commit"
+
+#Configurar el nombre de usuario
+git config --global user.name "nombre"
+
+#Configurar el correo electronico
+git config --global user.email "email.com"
+
+#Modificar la configuracion directamente , se pueden cambiar los colores aqui
+git config --global --edit
+
+#Mostrar la configuracion final
+git config --global --list
+
+#Crear repositorio llamado libro
+git init libro
+
+#Entrar al directorio del repositorio
+cd libro
+
+#Mostrar el contenido del repositorio
+ls
+
+#Comprobar el estado del repositorio
+git status
+
+#Añadir el archivo a la zona de intercambio temporal
+git add indice.txt
+
+#Se puede abrir el fichero directamente
+nano .txt
+
+#Mostrar los cambios en el repositorio
+git diff
+
+#Mostrar los cambios en el repositorio
+git log -p -1
+
+#Cambiar el mensaje del ultimo commit
+git commit --amend -m "Cambias aqui el mensaje"
+
+#Mostrar los cambios en el repositorio
+git log --onetime
+
+#Mostrar las diferencias entre la primera y ultima version
+git log -p $(git rev-list --max-parents=0 HEAD)..HEAD
+
+#Mostrar quien ha editado el archivo
+git blame .txt
+
+# Obtener los hashes de los dos commits anteriores
+hash_anterior_1=$(git rev-parse HEAD~1)
+hash_anterior_2=$(git rev-parse HEAD~2)
+
+# Mostrar las diferencias entre la última versión y dos versiones anteriores
+git diff $hash_anterior_2 $hash_anterior_1
