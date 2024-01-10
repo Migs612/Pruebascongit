@@ -1,7 +1,11 @@
 #Para iniciar el repositorio
+echo "# hola" >> README.MD
 git init
-git add comandos.txt
-git commit -m "Primer commit"
+git add README.MD
+git commit -m "first commit"
+git branch -M main
+git remote add origin enlacehttpsdeturepositorio
+git push -u origin main
 
 #Configurar el nombre de usuario
 git config --global user.name "nombre"
